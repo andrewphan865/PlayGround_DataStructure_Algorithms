@@ -1,0 +1,21 @@
+﻿https://leetcode.com/problems/print-in-order/solution/
+
+By simultaneousness, the processes or threads are not necessarily running independently in different physical CPUs, 
+but more often they interleave in the same physical CPU. Note that, the concurrency could apply to either process or thread, we use the words of "process" and "thread" interchangeably in the following sections.
+
+The concurrency is designed to above all enable multitasking, yet it could easily bring some bugs into the program if not applied properly. Depending on the consequences, the problems caused by concurrency can be categorized into three types:
+
+race conditions: the program ends with an undesired output, resulting from the sequence of execution among the processes.
+deadlocks: the concurrent processes wait for some necessary resources from each other. As a result, none of them can make progress.
+resource starvation: a process is perpetually denied necessary resources to progress its works.
+In particular, our problem here can be attributed to the race conditions. Before diving into the solutions, we show an example of race condition.
+
+Suppose we have a function called withdraw(amount) which deduces certain amount of money from the balance,
+if the demanding amount is less than the current balance. At the end, the function returns the remaining balance. The function is defined as follows:
+	int balance = 500;
+	int withdraw(int amount) {
+	  if (amount < balance) {
+		balance -= amount;
+	  }
+	  return balance;
+	}
