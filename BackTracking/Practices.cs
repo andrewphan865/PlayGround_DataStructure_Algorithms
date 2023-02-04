@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace DataStructureRepo.BackTracking
 {
@@ -50,11 +47,11 @@ namespace DataStructureRepo.BackTracking
     The test cases are generated such that the number of unique combinations that sum up to target is less than 150 combinations for the given input.
     https://leetcode.com/problems/combination-sum/description/
      */
-    class CombinationSumI
+/*    class CombinationSumI
     {
         public IList<IList<int>> CombinationSum(int[] candidates, int target)
         {
 
         }
-    }
+    }*/
 }

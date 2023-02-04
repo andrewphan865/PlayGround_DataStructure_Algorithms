@@ -33,4 +33,40 @@ namespace DataStructureRepo.BackTracking
                 findSolutions(n+1, other params);
                 removeValue(val, n);
      */
+
+
+    /*
+     Given two integers n and k, return all possible combinations of k numbers chosen from the range [1, n].
+    You may return the answer in any order.
+     https://leetcode.com/problems/combinations/description/
+     */
+    public class Combinations
+    {
+        IList<IList<int>> result = new List<IList<int>>();
+        int n;
+        int k;
+        public IList<IList<int>> Combine(int n, int k)
+        {
+            this.n = n;
+            this.k = k;
+            
+            Backtrack(1, new List<int>());
+            return result;
+        }
+
+        private void Backtrack(  int start, List<int> combination)
+        {
+            if (combination.Count == k)
+            {
+                result.Add(new List<int>(combination));
+                return;
+            }
+            for (int i = start; i <= n; i++)
+            {
+                combination.Add(i);
+                Backtrack( i + 1, combination);
+                combination.RemoveAt(combination.Count - 1);
+            }
+        }
+    }
 }

@@ -7,8 +7,7 @@ namespace DataStructureRepo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            PrintInOrder();
+            Console.WriteLine("Hello World!");      
         }
     }
 }
